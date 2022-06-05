@@ -13,7 +13,7 @@ namespace ApplicationApi.Controllers
     {
         private readonly IApplicationRepository _applicationRepository;
 
-        public ApplicationsController(IMapper mapper, IApplicationRepository applicationRepository )
+        public ApplicationsController( IApplicationRepository applicationRepository )
         {
             _applicationRepository = applicationRepository;
         }
