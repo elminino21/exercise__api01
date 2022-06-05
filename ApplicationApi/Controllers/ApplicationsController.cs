@@ -49,7 +49,7 @@ namespace ApplicationApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<IEnumerable<Application>>> GetByCatergoryAndDate([FromQuery] string category , [FromQuery] string? date, string? toDate = null)
+        public async Task<ActionResult<IEnumerable<Application>>> GetByCatergoryAndDate([FromQuery] string category , [FromQuery] string? date, [FromQuery] string? toDate)
         {
             DateTime fromDateTime, toDateTime ;
 
@@ -62,10 +62,8 @@ namespace ApplicationApi.Controllers
             {
                 // if null or poorly formatted defaults to max value
                 toDateTime = DateTime.MaxValue;
-
-            }else{
-                DateTime.TryParse(toDate, out toDateTime);
             }
+
             try
             {
                 Console.WriteLine($"{fromDateTime}   {toDateTime}");
